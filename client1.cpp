@@ -1,4 +1,4 @@
-//modified by:
+//modified by: Derrick Alden
 //date:
 //changes:
 //
@@ -84,6 +84,7 @@ int main(int argc, char *argv[])
 	g.connectWithServer(argv[1], atoi(argv[2]));
 	//------------------------------------------------------
 	//Get any message from server.
+	while(true) {
 	printf("read server...\n");
 	g.readFromServer(buffer);
 	printf("%s\n", buffer);
@@ -92,6 +93,7 @@ int main(int argc, char *argv[])
 	printf("Enter a message: ");
 	fgets(message, 255, stdin);
 	g.writeToServer(message);
+	}
 	//------------------------------------------------------
 	g.closeConnection();
 	return 0;
